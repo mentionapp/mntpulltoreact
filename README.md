@@ -19,7 +19,6 @@ The shortest sample code use the MNTPullToReactDefaultView. For instance the cod
    self.tableView.delegate = self;
    self.tableView.dataSource = self;
    MNTPullToReactControl *reactControl = [[MNTPullToReactControl alloc] initWithNumberOfActions:4];
-   reactControl.backgroundColor = [UIColor redColor];
    [reactControl addTarget:self action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
    self.tableView.reactControl = reactControl;
 }
