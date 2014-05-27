@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA57C1A4192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA57C19B192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m */; };
+		AA724E31192D1AB300DB80E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA724E30192D1AB300DB80E9 /* Foundation.framework */; };
+		AA724E36192D1AB300DB80E9 /* PullToReact.h in Copy Files */ = {isa = PBXBuildFile; fileRef = AA724E35192D1AB300DB80E9 /* PullToReact.h */; };
+		AA724E3F192D1AB300DB80E9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA724E3E192D1AB300DB80E9 /* XCTest.framework */; };
+		AA724E40192D1AB300DB80E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA724E30192D1AB300DB80E9 /* Foundation.framework */; };
+		AA724E42192D1AB300DB80E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA724E41192D1AB300DB80E9 /* UIKit.framework */; };
+		AA724E45192D1AB300DB80E9 /* libPullToReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA724E2D192D1AB300DB80E9 /* libPullToReact.a */; };
+		AA724E4B192D1AB300DB80E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA724E49192D1AB300DB80E9 /* InfoPlist.strings */; };
+		AA724E4D192D1AB300DB80E9 /* PullToReactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA724E4C192D1AB300DB80E9 /* PullToReactTests.m */; };
+		AA769F0619332ED100E73640 /* UITableView+MNTPullToReact.m in Sources */ = {isa = PBXBuildFile; fileRef = AA769F0519332ED100E73640 /* UITableView+MNTPullToReact.m */; };
+		AA769F0919332F2600E73640 /* MNTPullToReactControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AA769F0819332F2600E73640 /* MNTPullToReactControl.m */; };
+		AA769F0A19335C7D00E73640 /* MNTPullToReactControl.h in Copy Files */ = {isa = PBXBuildFile; fileRef = AA769F0719332F2600E73640 /* MNTPullToReactControl.h */; };
+		AA769F0B19335C8D00E73640 /* UITableView+MNTPullToReact.h in Copy Files */ = {isa = PBXBuildFile; fileRef = AA769F0419332ED100E73640 /* UITableView+MNTPullToReact.h */; };
+		AA769F1519347DAC00E73640 /* MNTPullToReactView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA769F1419347DAC00E73640 /* MNTPullToReactView.m */; };
+		AA769F18193484AE00E73640 /* MNTPullToReactDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA769F17193484AE00E73640 /* MNTPullToReactDefaultView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA724E43192D1AB300DB80E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA724E25192D1AB300DB80E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA724E2C192D1AB300DB80E9;
+			remoteInfo = PullToReact;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA724E2B192D1AB300DB80E9 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				AA724E36192D1AB300DB80E9 /* PullToReact.h in Copy Files */,
+				AA769F0A19335C7D00E73640 /* MNTPullToReactControl.h in Copy Files */,
+				AA769F0B19335C8D00E73640 /* UITableView+MNTPullToReact.h in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AA57C19A192DEE5E00D6B04B /* MNTFakeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTFakeGestureRecognizer.h; sourceTree = "<group>"; };
+		AA57C19B192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTFakeGestureRecognizer.m; sourceTree = "<group>"; };
+		AA724E2D192D1AB300DB80E9 /* libPullToReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPullToReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA724E30192D1AB300DB80E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA724E34192D1AB300DB80E9 /* PullToReact-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PullToReact-Prefix.pch"; sourceTree = "<group>"; };
+		AA724E35192D1AB300DB80E9 /* PullToReact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullToReact.h; sourceTree = "<group>"; };
+		AA724E3D192D1AB300DB80E9 /* PullToReactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PullToReactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA724E3E192D1AB300DB80E9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AA724E41192D1AB300DB80E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AA724E48192D1AB300DB80E9 /* PullToReactTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PullToReactTests-Info.plist"; sourceTree = "<group>"; };
+		AA724E4A192D1AB300DB80E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA724E4C192D1AB300DB80E9 /* PullToReactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullToReactTests.m; sourceTree = "<group>"; };
+		AA769F0419332ED100E73640 /* UITableView+MNTPullToReact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MNTPullToReact.h"; sourceTree = "<group>"; };
+		AA769F0519332ED100E73640 /* UITableView+MNTPullToReact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MNTPullToReact.m"; sourceTree = "<group>"; };
+		AA769F0719332F2600E73640 /* MNTPullToReactControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTPullToReactControl.h; sourceTree = "<group>"; };
+		AA769F0819332F2600E73640 /* MNTPullToReactControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTPullToReactControl.m; sourceTree = "<group>"; };
+		AA769F0D19335D0100E73640 /* MNTPullToReactControl+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNTPullToReactControl+Private.h"; sourceTree = "<group>"; };
+		AA769F1319347DAC00E73640 /* MNTPullToReactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTPullToReactView.h; sourceTree = "<group>"; };
+		AA769F1419347DAC00E73640 /* MNTPullToReactView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTPullToReactView.m; sourceTree = "<group>"; };
+		AA769F16193484AE00E73640 /* MNTPullToReactDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTPullToReactDefaultView.h; sourceTree = "<group>"; };
+		AA769F17193484AE00E73640 /* MNTPullToReactDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTPullToReactDefaultView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA724E2A192D1AB300DB80E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA724E31192D1AB300DB80E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA724E3A192D1AB300DB80E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA724E3F192D1AB300DB80E9 /* XCTest.framework in Frameworks */,
+				AA724E45192D1AB300DB80E9 /* libPullToReact.a in Frameworks */,
+				AA724E42192D1AB300DB80E9 /* UIKit.framework in Frameworks */,
+				AA724E40192D1AB300DB80E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA724E24192D1AB300DB80E9 = {
+			isa = PBXGroup;
+			children = (
+				AA724E32192D1AB300DB80E9 /* PullToReact */,
+				AA724E46192D1AB300DB80E9 /* PullToReactTests */,
+				AA724E2F192D1AB300DB80E9 /* Frameworks */,
+				AA724E2E192D1AB300DB80E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA724E2E192D1AB300DB80E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA724E2D192D1AB300DB80E9 /* libPullToReact.a */,
+				AA724E3D192D1AB300DB80E9 /* PullToReactTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA724E2F192D1AB300DB80E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA724E30192D1AB300DB80E9 /* Foundation.framework */,
+				AA724E3E192D1AB300DB80E9 /* XCTest.framework */,
+				AA724E41192D1AB300DB80E9 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA724E32192D1AB300DB80E9 /* PullToReact */ = {
+			isa = PBXGroup;
+			children = (
+				AA57C19A192DEE5E00D6B04B /* MNTFakeGestureRecognizer.h */,
+				AA57C19B192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m */,
+				AA769F0D19335D0100E73640 /* MNTPullToReactControl+Private.h */,
+				AA769F0719332F2600E73640 /* MNTPullToReactControl.h */,
+				AA769F0819332F2600E73640 /* MNTPullToReactControl.m */,
+				AA769F16193484AE00E73640 /* MNTPullToReactDefaultView.h */,
+				AA769F17193484AE00E73640 /* MNTPullToReactDefaultView.m */,
+				AA769F1319347DAC00E73640 /* MNTPullToReactView.h */,
+				AA769F1419347DAC00E73640 /* MNTPullToReactView.m */,
+				AA724E35192D1AB300DB80E9 /* PullToReact.h */,
+				AA724E33192D1AB300DB80E9 /* Supporting Files */,
+				AA769F0419332ED100E73640 /* UITableView+MNTPullToReact.h */,
+				AA769F0519332ED100E73640 /* UITableView+MNTPullToReact.m */,
+			);
+			path = PullToReact;
+			sourceTree = "<group>";
+		};
+		AA724E33192D1AB300DB80E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA724E34192D1AB300DB80E9 /* PullToReact-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA724E46192D1AB300DB80E9 /* PullToReactTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA724E4C192D1AB300DB80E9 /* PullToReactTests.m */,
+				AA724E47192D1AB300DB80E9 /* Supporting Files */,
+			);
+			path = PullToReactTests;
+			sourceTree = "<group>";
+		};
+		AA724E47192D1AB300DB80E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA724E48192D1AB300DB80E9 /* PullToReactTests-Info.plist */,
+				AA724E49192D1AB300DB80E9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA724E2C192D1AB300DB80E9 /* PullToReact */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA724E50192D1AB300DB80E9 /* Build configuration list for PBXNativeTarget "PullToReact" */;
+			buildPhases = (
+				AA724E29192D1AB300DB80E9 /* Sources */,
+				AA724E2A192D1AB300DB80E9 /* Frameworks */,
+				AA724E2B192D1AB300DB80E9 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PullToReact;
+			productName = PullToReact;
+			productReference = AA724E2D192D1AB300DB80E9 /* libPullToReact.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AA724E3C192D1AB300DB80E9 /* PullToReactTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA724E53192D1AB300DB80E9 /* Build configuration list for PBXNativeTarget "PullToReactTests" */;
+			buildPhases = (
+				AA724E39192D1AB300DB80E9 /* Sources */,
+				AA724E3A192D1AB300DB80E9 /* Frameworks */,
+				AA724E3B192D1AB300DB80E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA724E44192D1AB300DB80E9 /* PBXTargetDependency */,
+			);
+			name = PullToReactTests;
+			productName = PullToReactTests;
+			productReference = AA724E3D192D1AB300DB80E9 /* PullToReactTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA724E25192D1AB300DB80E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "syst-ms.com";
+			};
+			buildConfigurationList = AA724E28192D1AB300DB80E9 /* Build configuration list for PBXProject "PullToReact" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA724E24192D1AB300DB80E9;
+			productRefGroup = AA724E2E192D1AB300DB80E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA724E2C192D1AB300DB80E9 /* PullToReact */,
+				AA724E3C192D1AB300DB80E9 /* PullToReactTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA724E3B192D1AB300DB80E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA724E4B192D1AB300DB80E9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA724E29192D1AB300DB80E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA57C1A4192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m in Sources */,
+				AA769F0619332ED100E73640 /* UITableView+MNTPullToReact.m in Sources */,
+				AA769F18193484AE00E73640 /* MNTPullToReactDefaultView.m in Sources */,
+				AA769F1519347DAC00E73640 /* MNTPullToReactView.m in Sources */,
+				AA769F0919332F2600E73640 /* MNTPullToReactControl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA724E39192D1AB300DB80E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA724E4D192D1AB300DB80E9 /* PullToReactTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA724E44192D1AB300DB80E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA724E2C192D1AB300DB80E9 /* PullToReact */;
+			targetProxy = AA724E43192D1AB300DB80E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA724E49192D1AB300DB80E9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA724E4A192D1AB300DB80E9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA724E4E192D1AB300DB80E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AA724E4F192D1AB300DB80E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA724E51192D1AB300DB80E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/PullToReact.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullToReact/PullToReact-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA724E52192D1AB300DB80E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/PullToReact.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullToReact/PullToReact-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AA724E54192D1AB300DB80E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullToReact/PullToReact-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PullToReactTests/PullToReactTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AA724E55192D1AB300DB80E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PullToReact/PullToReact-Prefix.pch";
+				INFOPLIST_FILE = "PullToReactTests/PullToReactTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA724E28192D1AB300DB80E9 /* Build configuration list for PBXProject "PullToReact" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA724E4E192D1AB300DB80E9 /* Debug */,
+				AA724E4F192D1AB300DB80E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA724E50192D1AB300DB80E9 /* Build configuration list for PBXNativeTarget "PullToReact" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA724E51192D1AB300DB80E9 /* Debug */,
+				AA724E52192D1AB300DB80E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA724E53192D1AB300DB80E9 /* Build configuration list for PBXNativeTarget "PullToReactTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA724E54192D1AB300DB80E9 /* Debug */,
+				AA724E55192D1AB300DB80E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA724E25192D1AB300DB80E9 /* Project object */;
+}
