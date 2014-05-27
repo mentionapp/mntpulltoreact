@@ -84,9 +84,10 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
         [self.contentView didDoAction:action];
         [UIView animateWithDuration:0.3 animations:^{
             self.expanded = NO;
+        } completion:^(BOOL finished) {
+            [self.contentView willTriggerAction:0];
+            [self.contentView didTriggerAction:0];
         }];
-        [self.contentView willTriggerAction:0];
-        [self.contentView didTriggerAction:0];
     });
 }
 
