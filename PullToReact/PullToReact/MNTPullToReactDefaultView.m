@@ -10,6 +10,8 @@
 
 static NSString *MNTPullToReactDefaultViewMsgNoAction = @"No action triggered";
 static NSString *MNTPullToReactDefaultViewMsgActionTrigger = @"Action %d triggered";
+static NSString *MNTPullToReactDefaultViewMsgDoingAction = @"Doing action %d";
+static NSString *MNTPullToReactDefaultViewMsgHasDoneAction = @"Action %d done";
 
 @interface MNTPullToReactDefaultView ()
 @property(nonatomic) UILabel *actionLabel;
@@ -75,11 +77,13 @@ static NSString *MNTPullToReactDefaultViewMsgActionTrigger = @"Action %d trigger
 - (void)willDoAction:(NSInteger)action
 {
     NSLog(@"%s", __func__);
+    self.actionLabel.text = [NSString stringWithFormat:MNTPullToReactDefaultViewMsgDoingAction, action];
 }
 
 - (void)didDoAction:(NSInteger)action
 {
     NSLog(@"%s", __func__);
+    self.actionLabel.text = [NSString stringWithFormat:MNTPullToReactDefaultViewMsgHasDoneAction, action];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
