@@ -23,11 +23,15 @@
  initWithNumberOfActions: initialize the pull to react with number of actions
  
  A default contentView is set while the contentView is not set by the user library
+ 
+ @see contentView
  */
 - (id)initWithNumberOfActions:(NSInteger)number;
 
 /**
+ contentView The content view of the pull to react
  
+ Embed all the pull to react user interface and react to the events of the control
  */
 @property(nonatomic) MNTPullToReactView *contentView;
 
