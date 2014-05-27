@@ -18,6 +18,8 @@ NSString * const kMNTPullToReactKey = @"kMNTPullToReactKey";
 
 - (void)setReactControl:(MNTPullToReactControl *)reactControl
 {
+    MNTPullToReactControl *_reactControl = self.reactControl;
+    [_reactControl removeFromScrollView];
     objc_setAssociatedObject(self, &kMNTPullToReactKey, reactControl, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [reactControl reactFromScrollView:self];
 }

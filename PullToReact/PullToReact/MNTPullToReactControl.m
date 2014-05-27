@@ -241,4 +241,12 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     [self.scrollView addGestureRecognizer:self.fakeGestureRecognizer];
 }
 
+- (void)removeFromScrollView
+{
+    [self.scrollView removeGestureRecognizer:self.fakeGestureRecognizer];
+    self.fakeGestureRecognizer.delegate = nil;
+    self.scrollViewContentInset = UIEdgeInsetsZero;
+    self.scrollView = nil;
+}
+
 @end

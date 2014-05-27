@@ -11,4 +11,5 @@
 @interface MNTPullToReactControl (Private)
 
 - (void)reactFromScrollView:(UIScrollView *)scrollView;
+- (void)removeFromScrollView;
 @end
