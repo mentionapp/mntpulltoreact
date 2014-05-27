@@ -70,7 +70,9 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     self.scrollViewContentInset = self.scrollView.contentInset;
     self.action = action;
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.expanded = YES;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.expanded = YES;
+        }];
         [self.contentView willDoAction:self.action];
     });
 }
@@ -80,7 +82,11 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     self.action = 0;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.contentView didDoAction:action];
-        self.expanded = NO;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.expanded = NO;
+        }];
+        [self.contentView willTriggerAction:0];
+        [self.contentView didTriggerAction:0];
     });
 }
 
