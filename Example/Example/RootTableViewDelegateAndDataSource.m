@@ -31,14 +31,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Change react control according to the cell selected
+    NSInteger index = [indexPath row] % [self.data count];
     MNTPullToReactControl *reactControl = [[MNTPullToReactControl alloc] initWithNumberOfActions:4];
-    if ([[_data objectAtIndex:[indexPath row]] isEqualToString:@"redColor"]) {
+    if ([[_data objectAtIndex:index] isEqualToString:@"redColor"]) {
         reactControl.backgroundColor = [UIColor redColor];
     }
-    if ([[_data objectAtIndex:[indexPath row]] isEqualToString:@"greenColor"]) {
+    if ([[_data objectAtIndex:index] isEqualToString:@"greenColor"]) {
         reactControl.backgroundColor = [UIColor greenColor];
     }
-    if ([[_data objectAtIndex:[indexPath row]] isEqualToString:@"whiteColor"]) {
+    if ([[_data objectAtIndex:index] isEqualToString:@"whiteColor"]) {
         reactControl.backgroundColor = [UIColor whiteColor];
     }
     [reactControl addTarget:tableView action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
@@ -49,7 +50,7 @@
 #pragma mark - Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.data count];
+    return [self.data count] * 20;
 }
 
 
@@ -60,7 +61,8 @@
 	if (nil==cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
 	}
-    cell.textLabel.text = [self.data objectAtIndex:[indexPath row]];
+    NSInteger index = [indexPath row] % [self.data count];
+    cell.textLabel.text = [self.data objectAtIndex:index];
     return cell;
 }
 
