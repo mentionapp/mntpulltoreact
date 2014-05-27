@@ -25,14 +25,20 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 {
     pthread_mutex_t _actionMutex;
 }
-@property(nonatomic, assign) NSInteger action; // Store the current action triggered. O means no action triggered
+@property(nonatomic, assign, readwrite) NSInteger action;
+@property(nonatomic, assign) NSInteger triggeredAction; // Memorize which action should be done on user launch
 @property(nonatomic, assign, readwrite) NSInteger numberOfActions;
 @property(nonatomic, assign, readwrite) UIScrollView *scrollView;
-@property(nonatomic) MNTFakeGestureRecognizer *fakeGestureRecognizer;
+
+@property(nonatomic, assign, getter = isExpanded) BOOL expanded;
+@property(nonatomic) MNTFakeGestureRecognizer *fakeGestureRecognizer; // Use to track user touch on the scrollview
+
+@property(nonatomic, assign) UIEdgeInsets scrollViewContentInset; // Default scrollview content inset
 @end
 
 @implementation MNTPullToReactControl
 
+#pragma mark - Init methods
 - (id)initWithFrame:(CGRect)frame
 {
     return nil;
@@ -48,12 +54,34 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     if (nil == self) {
         return nil;
     }
-    self.action = 0;
+    _action = 0;
+    _triggeredAction = 0;
     pthread_mutex_init(&_actionMutex, NULL);
-    self.numberOfActions = number;
-    self.contentView = contentView;
-    self.threshold = MNTPullToReactControlDefaultThreshold;
+    _numberOfActions = number;
+    self.contentView = contentView; // set via the accessor to add the contentView to the hierarchy
+    _threshold = MNTPullToReactControlDefaultThreshold;
+    _expanded = NO;
     return self;
+}
+
+#pragma mark - life cycle methods
+- (void)beginAction:(NSInteger)action
+{
+    self.scrollViewContentInset = self.scrollView.contentInset;
+    self.action = action;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.expanded = YES;
+        [self.contentView willDoAction:self.action];
+    });
+}
+
+- (void)endAction:(NSInteger)action
+{
+    self.action = 0;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.contentView didDoAction:action];
+        self.expanded = NO;
+    });
 }
 
 #pragma mark - Accessors
@@ -67,11 +95,36 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     [self addSubview:_contentView];
 }
 
+- (void)setExpanded:(BOOL)expanded
+{
+    _expanded = expanded;
+    if (expanded) {
+        [self updateScrollViewContentTopInset:self.threshold];
+    } else {
+        [self updateScrollViewContentTopInset:0.0];
+    }
+}
+
+#pragma mark - Private
+- (void)updateScrollViewContentTopInset:(CGFloat)topInset
+{
+    UIEdgeInsets inset = self.scrollViewContentInset;
+	inset.top += topInset;
+	if (UIEdgeInsetsEqualToEdgeInsets(self.scrollView.contentInset, inset)) {
+		return;
+	}
+    self.scrollView.contentInset = inset;
+    if (self.scrollView.contentOffset.y <= 0.0f) {
+		[self.scrollView scrollRectToVisible:CGRectMake(0.0f, 0.0f, 1.0f, 1.0f) animated:NO];
+	}
+}
+
 #pragma mark - UIGestureRecognizer delegate protocol
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }
 
+#pragma mark - Gesture handling
 - (void)handleFakeGesture:(MNTFakeGestureRecognizer *)gesture {
     switch (gesture.state) {
         case UIGestureRecognizerStatePossible:
@@ -131,12 +184,12 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 {
     if (location.y < self.threshold) {
         pthread_mutex_lock(&_actionMutex);
-        if (0!=self.action) {
-            self.action = 0;
+        if (0!=self.triggeredAction) {
+            self.triggeredAction = 0;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.contentView willTriggerAction:self.action];
+                [self.contentView willTriggerAction:self.triggeredAction];
                 
-                [self.contentView didTriggerAction:self.action];
+                [self.contentView didTriggerAction:self.triggeredAction];
             });
         }
         pthread_mutex_unlock(&_actionMutex);
@@ -144,13 +197,13 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
         pthread_mutex_lock(&_actionMutex);
         // find the action that should be triggered
         CGFloat actionWidth = floorf(self.scrollView.bounds.size.width / self.numberOfActions);
-        int action = (int)floorf(location.x / actionWidth) + 1;
-        if (action != self.action) {
-            self.action = action;
+        int triggeredAction = (int)floorf(location.x / actionWidth) + 1;
+        if (triggeredAction != self.triggeredAction) {
+            self.triggeredAction = triggeredAction;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.contentView willTriggerAction:self.action];
+                [self.contentView willTriggerAction:self.triggeredAction];
                 
-                [self.contentView didTriggerAction:self.action];
+                [self.contentView didTriggerAction:self.triggeredAction];
             });
         }
         pthread_mutex_unlock(&_actionMutex);
@@ -160,11 +213,9 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 - (void)doWithLocation:(CGPoint)location
 {
     if (location.y >= self.threshold) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.contentView willDoAction:self.action];
-            
-            [self.contentView didDoAction:self.action];
-        });
+        [self beginAction:self.triggeredAction];
+        self.triggeredAction = 0;
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
 }
 
@@ -181,6 +232,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
         frame;
     });
     self.scrollView = scrollView;
+    self.scrollViewContentInset = scrollView.contentInset;
     [scrollView addSubview:self];
     
     self.fakeGestureRecognizer = [[MNTFakeGestureRecognizer alloc] initWithTarget:self action:@selector(handleFakeGesture:)];

@@ -41,6 +41,8 @@
     if ([[_data objectAtIndex:[indexPath row]] isEqualToString:@"whiteColor"]) {
         reactControl.backgroundColor = [UIColor whiteColor];
     }
+    [reactControl addTarget:tableView action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
+
     tableView.reactControl = reactControl;
 }
 

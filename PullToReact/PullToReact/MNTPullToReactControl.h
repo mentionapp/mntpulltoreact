@@ -36,6 +36,13 @@
 @property(nonatomic) MNTPullToReactView *contentView;
 
 /**
+ An integer value indicating whether a action operation has been triggered and is in progress.
+ 
+ O means no action in progress
+ */
+@property(nonatomic, assign, readonly) NSInteger action;
+
+/**
  numberOfActions The number of actions that the pull to react control can trigger
  
  This property is set by the default init method initWithNumberOfActions:
@@ -59,5 +66,15 @@
  @see [UITableView+MNTPullToReact reactControl]
  */
 @property(nonatomic, assign, readonly) UIScrollView *scrollView;
+
+/**
+ Tells the control that an action operation was started programmatically.
+ */
+- (void)beginAction:(NSInteger)action;
+
+/**
+ Tells the control that an action has ended.
+ */
+- (void)endAction:(NSInteger)action;
 
 @end

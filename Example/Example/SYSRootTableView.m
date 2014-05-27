@@ -24,6 +24,7 @@
         // Initialization code
         MNTPullToReactControl *reactControl = [[MNTPullToReactControl alloc] initWithNumberOfActions:4];
         reactControl.backgroundColor = [UIColor redColor];
+        [reactControl addTarget:self action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
         self.reactControl = reactControl;
 
         _delegateAndDataSource = [[RootTableViewDelegateAndDataSource alloc] init];
@@ -33,13 +34,16 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)reaction:(id)sender
 {
-    // Drawing code
+    MNTPullToReactControl *reactControl = (MNTPullToReactControl *)sender;
+    NSLog(@"Doing action %ld", (long)reactControl.action);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        sleep(2);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [reactControl endAction:reactControl.action];
+        });
+    });
 }
-*/
 
 @end
