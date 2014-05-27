@@ -10,4 +10,5 @@
 
 @interface RootTableViewDelegateAndDataSource : NSObject<UITableViewDelegate, UITableViewDataSource>
 
+- (void)reaction:(id)sender; // reaction of the pull to react
 @end

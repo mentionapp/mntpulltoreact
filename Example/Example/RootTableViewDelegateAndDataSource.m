@@ -42,7 +42,7 @@
     if ([[_data objectAtIndex:index] isEqualToString:@"whiteColor"]) {
         reactControl.backgroundColor = [UIColor whiteColor];
     }
-    [reactControl addTarget:tableView action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
+    [reactControl addTarget:self action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
 
     tableView.reactControl = reactControl;
 }
@@ -64,6 +64,19 @@
     NSInteger index = [indexPath row] % [self.data count];
     cell.textLabel.text = [self.data objectAtIndex:index];
     return cell;
+}
+
+#pragma mark - Pull to react target-action method
+- (void)reaction:(id)sender
+{
+    MNTPullToReactControl *reactControl = (MNTPullToReactControl *)sender;
+    NSLog(@"Doing action %ld", (long)reactControl.action);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        usleep(1100 * 1000);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [reactControl endAction:reactControl.action];
+        });
+    });
 }
 
 @end
