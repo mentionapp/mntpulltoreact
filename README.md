@@ -7,7 +7,16 @@ You can bind as many reaction as you want to a MNTPullToReact and have your user
 MNTPullToReact is very easy to use and highly customizable.
 
 ## Easy to use
-The shortest sample code use the MNTPullToReactDefaultView. For instance the code below create a pull to react with 4 actions.
+It is a subclass of an `UIControl` and embrace the common [target-action](https://developer.apple.com/library/ios/documentation/general/conceptual/Devpedia-CocoaApp/TargetAction.html) design pattern widely used in the Apple own controls. It mimics also the Apple `UIRefreshControl` control interface to facilitate its usage by developers who already use the Apple pull to refresh control.
+
+| What                        | `UIRefreshControl` | `MNTPullToReact`   |
+| --------------------------- | ------------------ | ------------------ |
+| Property to know the status | `BOOL refreshing`  | `NSINteger action` |
+| Initiate an action          | `beginRefreshing`  | `beginAction:`     |
+| Terminate an action         | `endRefreshing`    | `endAction:`       |
+
+### Shortest code sample
+The shortest code sample use the MNTPullToReactDefaultView. For instance the code below create a pull to react with 4 actions.
 
 ``` objective-c
 #import "PullToReact/PullToReact.h"
