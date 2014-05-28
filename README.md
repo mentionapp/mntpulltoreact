@@ -1,4 +1,4 @@
-mntpulltoreact
+MNTPullToReact
 ==============
 MNTPullToReact is a kind of extension of the famous interaction pull to refresh. The main idea comes from an unique question: Is that the natural pulling gesture can make more and so avoid ugly action buttons that take the precious place to the content.
 
