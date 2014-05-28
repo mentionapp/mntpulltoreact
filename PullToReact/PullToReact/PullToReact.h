@@ -8,3 +8,4 @@
 
 #import "MNTPullToReactControl.h"
 #import "UITableView+MNTPullToReact.h"
+#import "MNTPullToReactView.h"
