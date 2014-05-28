@@ -8,14 +8,14 @@
 
 #import "MentionPullToReactView.h"
 
-@interface MNTFakeMention : NSObject
+@interface FakeMention : NSObject
 @property(nonatomic) NSNumber *favorite;
 @property(nonatomic) NSNumber *archived;
 @property(nonatomic) NSNumber *trashed;
 @property(nonatomic) NSNumber *spam;
 @end
 
-@implementation MNTFakeMention
+@implementation FakeMention
 
 @end
 
@@ -37,7 +37,7 @@ static BOOL hasAttributedString = NO;
     NSMutableArray  *_imageViews;
     UILabel     *_label;
 }
-@property(nonatomic) MNTFakeMention *fakeMention; // To fake the mention data source
+@property(nonatomic) FakeMention *fakeMention; // To fake the mention data source
 @end
 
 @implementation MentionPullToReactView
@@ -59,7 +59,7 @@ static BOOL hasAttributedString = NO;
         if ([NSAttributedString instancesRespondToSelector:@selector(drawInRect:)]) {
             hasAttributedString = YES;
         }
-	}
+    }
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -84,7 +84,7 @@ static BOOL hasAttributedString = NO;
         [_label setText:@"Pull to view actions"];
         [self addSubview:_label];
         _fakeMention = ({
-            MNTFakeMention *m = [[MNTFakeMention alloc] init];
+            FakeMention *m = [[FakeMention alloc] init];
             m.favorite = @(false);
             m.archived = @(false);
             m.trashed = @(false);
@@ -246,7 +246,7 @@ static BOOL hasAttributedString = NO;
     });
 }
 
-- (NSString *)textOfAction:(MNTMentionHeaderActions)action forMention:(MNTFakeMention *)mention
+- (NSString *)textOfAction:(MNTMentionHeaderActions)action forMention:(FakeMention *)mention
 {
     NSString *text = @"";
     NSArray *textsDo = [_actions valueForKeyPath:@"@unionOfObjects.textDo"];
