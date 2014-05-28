@@ -11,7 +11,7 @@ It is a subclass of an `UIControl` and embrace the common [target-action](https:
 
 | What                        | `UIRefreshControl` | `MNTPullToReact`   |
 | --------------------------- | ------------------ | ------------------ |
-| Property to know the status | `BOOL refreshing`  | `NSINteger action` |
+| Property to know the status | `BOOL refreshing`  | `NSInteger action` |
 | Initiate an action          | `beginRefreshing`  | `beginAction:`     |
 | Terminate an action         | `endRefreshing`    | `endAction:`       |
 
