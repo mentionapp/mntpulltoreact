@@ -59,6 +59,7 @@
             });
         });
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Data Source
