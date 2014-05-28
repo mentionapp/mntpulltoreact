@@ -67,6 +67,13 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 #pragma mark - life cycle methods
 - (void)beginAction:(NSInteger)action
 {
+    if (self.triggeredAction != action) {
+        self.triggeredAction = action;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.contentView willTriggerAction:self.triggeredAction];
+            [self.contentView didTriggerAction:self.triggeredAction];
+        });
+    }
     self.scrollViewContentInset = self.scrollView.contentInset;
     self.action = action;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -100,6 +107,13 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     [_contentView removeFromSuperview];
     _contentView = contentView;
     [self addSubview:_contentView];
+    self.frame = ({
+        CGRect frame = _contentView.bounds;
+        frame.origin.y = -frame.size.height;
+        frame.size.width = self.scrollView.bounds.size.width;
+        frame;
+    });
+
 }
 
 - (void)setExpanded:(BOOL)expanded
