@@ -21,6 +21,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 ((-referenceY)-currentY)>=0.0?((-referenceY)-currentY):0.0; \
 })
 
+#pragma mark - Pull to react private extension
 @interface MNTPullToReactControl ()<UIGestureRecognizerDelegate>
 {
     pthread_mutex_t _actionMutex;
@@ -36,9 +37,10 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 @property(nonatomic, assign) UIEdgeInsets scrollViewContentInset; // Default scrollview content inset
 @end
 
+#pragma mark - Pull to react implementation
 @implementation MNTPullToReactControl
 
-#pragma mark - Init methods
+#pragma mark Init methods
 - (id)initWithFrame:(CGRect)frame
 {
     return nil;
@@ -64,7 +66,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     return self;
 }
 
-#pragma mark - life cycle methods
+#pragma mark life cycle methods
 - (void)beginAction:(NSInteger)action
 {
     if (self.triggeredAction != action) {
@@ -98,7 +100,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     });
 }
 
-#pragma mark - Accessors
+#pragma mark Accessors
 - (void)setContentView:(MNTPullToReactView *)contentView
 {
     if (_contentView == contentView) {
@@ -126,7 +128,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     }
 }
 
-#pragma mark - Private
+#pragma mark Private
 - (void)updateScrollViewContentTopInset:(CGFloat)topInset
 {
     UIEdgeInsets inset = self.scrollViewContentInset;
@@ -140,12 +142,12 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 	}
 }
 
-#pragma mark - UIGestureRecognizer delegate protocol
+#pragma mark UIGestureRecognizer delegate protocol
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }
 
-#pragma mark - Gesture handling
+#pragma mark Gesture handling
 - (void)handleFakeGesture:(MNTFakeGestureRecognizer *)gesture {
     switch (gesture.state) {
         case UIGestureRecognizerStatePossible:
@@ -242,6 +244,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 
 @end
 
+#pragma mark - Pull to react private category
 @implementation MNTPullToReactControl (Private)
 
 - (void)reactFromScrollView:(UIScrollView *)scrollView
