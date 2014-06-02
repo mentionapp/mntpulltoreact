@@ -30,4 +30,9 @@
  */
 - (void)didDoAction:(NSInteger)action;
 
+/**
+ Notifies the pull to react that user moves its finger around the targeted scrollview
+ */
+- (void)didMoveTo:(CGPoint)point;
+
 @end

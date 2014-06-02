@@ -10,6 +10,7 @@
 
 #import <pthread.h>
 
+#import "MNTPullToReactControl+Utils.h"
 #import "MNTFakeGestureRecognizer.h"
 #import "MNTPullToReactDefaultView.h"
 
@@ -25,6 +26,18 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 @interface MNTPullToReactControl ()<UIGestureRecognizerDelegate>
 {
     pthread_mutex_t _actionMutex;
+    
+    /**
+     Memorize if the contentView overrides the methods
+     */
+    struct
+    {
+        unsigned int contentViewWillTriggerAction:1;
+        unsigned int contentViewDidTriggerAction:1;
+        unsigned int contentViewWillDoAction:1;
+        unsigned int contentViewDidDoAction:1;
+        unsigned int contentViewDidMoveTo:1;
+    } contentViewFlags;
 }
 @property(nonatomic, assign, readwrite) NSInteger action;
 @property(nonatomic, assign) NSInteger triggeredAction; // Memorize which action should be done on user launch
@@ -74,9 +87,10 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     if (self.triggeredAction != action) {
         self.triggeredAction = action;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.contentView willTriggerAction:self.triggeredAction];
-            [self.contentView didTriggerAction:self.triggeredAction];
+            [self contentViewWillTriggerAction];
+            [self contentViewDidTriggerAction];
         });
+    self.action = 0;
     }
     self.scrollViewContentInset = self.scrollView.contentInset;
     self.action = action;
@@ -84,20 +98,20 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
         [UIView animateWithDuration:0.3 animations:^{
             self.expanded = YES;
         }];
-        [self.contentView willDoAction:self.action];
+        [self contentViewWillDoAction];
     });
 }
 
 - (void)endAction:(NSInteger)action
 {
-    self.action = 0;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.contentView didDoAction:action];
+        [self contentViewDidDoAction];
         [UIView animateWithDuration:0.3 animations:^{
             self.expanded = NO;
         } completion:^(BOOL finished) {
-            [self.contentView willTriggerAction:0];
-            [self.contentView didTriggerAction:0];
+            self.triggeredAction = 0;
+            [self contentViewWillTriggerAction];
+            [self contentViewDidTriggerAction];
         }];
     });
 }
@@ -110,6 +124,11 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     }
     [_contentView removeFromSuperview];
     _contentView = contentView;
+    contentViewFlags.contentViewWillTriggerAction = [self isContentViewOverridesMethod:@selector(willTriggerAction:)];
+    contentViewFlags.contentViewDidTriggerAction = [self isContentViewOverridesMethod:@selector(didTriggerAction:)];
+    contentViewFlags.contentViewWillDoAction = [self isContentViewOverridesMethod:@selector(willDoAction:)];
+    contentViewFlags.contentViewDidDoAction = [self isContentViewOverridesMethod:@selector(didDoAction:)];
+    contentViewFlags.contentViewDidMoveTo = [self isContentViewOverridesMethod:@selector(didMoveTo:)];
     [self addSubview:_contentView];
     self.frame = ({
         CGRect frame = _contentView.bounds;
@@ -142,6 +161,42 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     if (self.scrollView.contentOffset.y <= 0.0f) {
 		[self.scrollView scrollRectToVisible:CGRectMake(0.0f, 0.0f, 1.0f, 1.0f) animated:NO];
 	}
+}
+
+#pragma mark Content view actions
+- (void)contentViewWillTriggerAction
+{
+    if (contentViewFlags.contentViewWillTriggerAction) {
+        [self.contentView willTriggerAction:self.triggeredAction];
+    }
+}
+
+- (void)contentViewDidTriggerAction
+{
+    if (contentViewFlags.contentViewDidTriggerAction) {
+        [self.contentView didTriggerAction:self.triggeredAction];
+    }
+}
+
+- (void)contentViewWillDoAction
+{
+    if (contentViewFlags.contentViewWillDoAction) {
+        [self.contentView willDoAction:self.action];
+    }
+}
+
+- (void)contentViewDidDoAction
+{
+    if (contentViewFlags.contentViewDidDoAction) {
+        [self.contentView didDoAction:self.action];
+    }
+}
+
+- (void)contentViewDidMoveTo
+{
+    if (contentViewFlags.contentViewDidMoveTo) {
+        [self .contentView didMoveTo:self.location];
+    }
 }
 
 #pragma mark UIGestureRecognizer delegate protocol
@@ -213,9 +268,9 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
         if (0!=self.triggeredAction) {
             self.triggeredAction = 0;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.contentView willTriggerAction:self.triggeredAction];
+                [self contentViewWillTriggerAction];
                 
-                [self.contentView didTriggerAction:self.triggeredAction];
+                [self contentViewDidTriggerAction];
             });
         }
         pthread_mutex_unlock(&_actionMutex);
@@ -227,12 +282,17 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
         if (triggeredAction != self.triggeredAction) {
             self.triggeredAction = triggeredAction;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.contentView willTriggerAction:self.triggeredAction];
+                [self contentViewWillTriggerAction];
                 
-                [self.contentView didTriggerAction:self.triggeredAction];
+                [self contentViewDidTriggerAction];
             });
         }
         pthread_mutex_unlock(&_actionMutex);
+    }
+    if (0 < location.y) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self contentViewDidMoveTo];
+        });
     }
 }
 

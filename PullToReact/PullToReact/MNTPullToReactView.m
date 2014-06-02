@@ -39,4 +39,9 @@
     // Default implementation is empty
 }
 
+- (void)didMoveTo:(CGPoint)point
+{
+    // Default implementation is empty
+}
+
 @end

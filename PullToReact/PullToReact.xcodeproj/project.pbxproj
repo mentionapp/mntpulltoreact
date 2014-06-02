@@ -17,6 +17,7 @@
 		AA724E45192D1AB300DB80E9 /* libPullToReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA724E2D192D1AB300DB80E9 /* libPullToReact.a */; };
 		AA724E4B192D1AB300DB80E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA724E49192D1AB300DB80E9 /* InfoPlist.strings */; };
 		AA724E4D192D1AB300DB80E9 /* PullToReactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA724E4C192D1AB300DB80E9 /* PullToReactTests.m */; };
+		AA7398A0193C7FA300A264AE /* MNTPullToReactControl+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = AA73989F193C7FA300A264AE /* MNTPullToReactControl+Utils.m */; };
 		AA769F0619332ED100E73640 /* UITableView+MNTPullToReact.m in Sources */ = {isa = PBXBuildFile; fileRef = AA769F0519332ED100E73640 /* UITableView+MNTPullToReact.m */; };
 		AA769F0919332F2600E73640 /* MNTPullToReactControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AA769F0819332F2600E73640 /* MNTPullToReactControl.m */; };
 		AA769F0A19335C7D00E73640 /* MNTPullToReactControl.h in Copy Files */ = {isa = PBXBuildFile; fileRef = AA769F0719332F2600E73640 /* MNTPullToReactControl.h */; };
@@ -65,6 +66,8 @@
 		AA724E48192D1AB300DB80E9 /* PullToReactTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PullToReactTests-Info.plist"; sourceTree = "<group>"; };
 		AA724E4A192D1AB300DB80E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA724E4C192D1AB300DB80E9 /* PullToReactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullToReactTests.m; sourceTree = "<group>"; };
+		AA73989E193C7FA300A264AE /* MNTPullToReactControl+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNTPullToReactControl+Utils.h"; sourceTree = "<group>"; };
+		AA73989F193C7FA300A264AE /* MNTPullToReactControl+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNTPullToReactControl+Utils.m"; sourceTree = "<group>"; };
 		AA769F0419332ED100E73640 /* UITableView+MNTPullToReact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MNTPullToReact.h"; sourceTree = "<group>"; };
 		AA769F0519332ED100E73640 /* UITableView+MNTPullToReact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MNTPullToReact.m"; sourceTree = "<group>"; };
 		AA769F0719332F2600E73640 /* MNTPullToReactControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTPullToReactControl.h; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 				AA57C19A192DEE5E00D6B04B /* MNTFakeGestureRecognizer.h */,
 				AA57C19B192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m */,
 				AA769F0D19335D0100E73640 /* MNTPullToReactControl+Private.h */,
+				AA73989E193C7FA300A264AE /* MNTPullToReactControl+Utils.h */,
+				AA73989F193C7FA300A264AE /* MNTPullToReactControl+Utils.m */,
 				AA769F0719332F2600E73640 /* MNTPullToReactControl.h */,
 				AA769F0819332F2600E73640 /* MNTPullToReactControl.m */,
 				AA769F16193484AE00E73640 /* MNTPullToReactDefaultView.h */,
@@ -258,6 +263,7 @@
 				AA57C1A4192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m in Sources */,
 				AA769F0619332ED100E73640 /* UITableView+MNTPullToReact.m in Sources */,
 				AA769F18193484AE00E73640 /* MNTPullToReactDefaultView.m in Sources */,
+				AA7398A0193C7FA300A264AE /* MNTPullToReactControl+Utils.m in Sources */,
 				AA769F1519347DAC00E73640 /* MNTPullToReactView.m in Sources */,
 				AA769F0919332F2600E73640 /* MNTPullToReactControl.m in Sources */,
 			);
