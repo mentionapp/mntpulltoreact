@@ -90,7 +90,6 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
             [self contentViewWillTriggerAction];
             [self contentViewDidTriggerAction];
         });
-    self.action = 0;
     }
     self.scrollViewContentInset = self.scrollView.contentInset;
     self.action = action;
@@ -106,6 +105,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self contentViewDidDoAction];
+        self.action = 0;
         [UIView animateWithDuration:0.3 animations:^{
             self.expanded = NO;
         } completion:^(BOOL finished) {
