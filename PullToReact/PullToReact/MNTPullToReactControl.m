@@ -28,6 +28,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 }
 @property(nonatomic, assign, readwrite) NSInteger action;
 @property(nonatomic, assign) NSInteger triggeredAction; // Memorize which action should be done on user launch
+@property(nonatomic, assign) CGPoint location; // Memorize the location point of user finger
 @property(nonatomic, assign, readwrite) NSInteger numberOfActions;
 @property(nonatomic, assign, readwrite) UIScrollView *scrollView;
 
@@ -58,6 +59,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     }
     _action = 0;
     _triggeredAction = 0;
+    _location = CGPointZero;
     pthread_mutex_init(&_actionMutex, NULL);
     _numberOfActions = number;
     self.contentView = contentView; // set via the accessor to add the contentView to the hierarchy
@@ -205,6 +207,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 
 - (void)updateWithLocation:(CGPoint)location
 {
+    self.location = location;
     if (location.y < self.threshold) {
         pthread_mutex_lock(&_actionMutex);
         if (0!=self.triggeredAction) {
