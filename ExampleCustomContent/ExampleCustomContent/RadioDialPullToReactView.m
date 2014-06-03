@@ -85,7 +85,7 @@
         
         CGContextSetFillColorWithColor(ctx, [UIColor colorWithRed:0xab/255. green:0xa1/255. blue:0x97/255. alpha:0.5].CGColor);
         NSString *text = [NSString stringWithFormat:@"Select channel %d", self.lastChannel];
-        CGSize textSize = [text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:16]];
+        CGSize textSize = [text sizeWithAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:16]}];
         CGPoint textOrigin = CGPointZero;
         if (self.location.x*2 > self.bounds.size.width) {
             textOrigin = CGPointMake(self.location.x - 10 - textSize.width, self.bounds.size.height - textSize.height - 25);
@@ -93,7 +93,7 @@
             textOrigin = CGPointMake(self.location.x + 10, self.bounds.size.height - textSize.height - 25);
         }
         
-        [text drawInRect:(CGRect){textOrigin,textSize} withFont:[UIFont fontWithName:@"HelveticaNeue" size:16]];
+        [text drawInRect:(CGRect){textOrigin,textSize} withAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:16]}];
 
     }
     CGContextRestoreGState(ctx);
