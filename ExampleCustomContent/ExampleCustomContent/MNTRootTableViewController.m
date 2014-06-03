@@ -9,6 +9,7 @@
 #import "MNTRootTableViewController.h"
 
 #import "MentionViewController.h"
+#import "MNTRadioDialViewController.h"
 
 @interface MNTRootTableViewController ()
 @property(nonatomic) NSArray *data;
@@ -21,7 +22,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        _data = @[@"Mention pull to react"];
+        _data = @[@"Mention pull to react", @"Radio dial"];
     }
     return self;
 }
@@ -50,6 +51,10 @@
     if (0 == [indexPath row]) {
         MentionViewController *mentionViewController = [[MentionViewController alloc] init];
         [self.navigationController pushViewController:mentionViewController animated:YES];
+    }
+    if (1 == [indexPath row]) {
+        MNTRadioDialViewController *radioDialViewController = [[MNTRadioDialViewController alloc] init];
+        [self.navigationController pushViewController:radioDialViewController animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -22,6 +22,11 @@
 		AA331EBF1935E876001549EB /* MNTRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA331EBE1935E876001549EB /* MNTRootTableViewController.m */; };
 		AA331EC21935F975001549EB /* MentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA331EC11935F975001549EB /* MentionViewController.m */; };
 		AA331EC41935F9BE001549EB /* libPullToReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA331EC31935F9BE001549EB /* libPullToReact.a */; };
+		AA7398E1193CA4F100A264AE /* MNTRadioDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7398E0193CA4F100A264AE /* MNTRadioDialViewController.m */; };
+		AA7398E5193CA5A900A264AE /* RadioDialPullToReactView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7398E4193CA5A900A264AE /* RadioDialPullToReactView.m */; };
+		AA7398E8193CAD0200A264AE /* RadioDialView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7398E7193CAD0200A264AE /* RadioDialView.m */; };
+		AA7398EB193D2AFF00A264AE /* radiodialbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7398EA193D2AFF00A264AE /* radiodialbg@2x.png */; };
+		AAA69526193D318500D59A02 /* radiodialbg.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA69525193D318500D59A02 /* radiodialbg.png */; };
 		AAE55E771936149A00E09DCF /* pulldown-archive-hled.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE55E611936149A00E09DCF /* pulldown-archive-hled.png */; };
 		AAE55E781936149A00E09DCF /* pulldown-archive-hled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE55E621936149A00E09DCF /* pulldown-archive-hled@2x.png */; };
 		AAE55E791936149A00E09DCF /* pulldown-archive.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE55E631936149A00E09DCF /* pulldown-archive.png */; };
@@ -77,6 +82,14 @@
 		AA331EC01935F975001549EB /* MentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MentionViewController.h; sourceTree = "<group>"; };
 		AA331EC11935F975001549EB /* MentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MentionViewController.m; sourceTree = "<group>"; };
 		AA331EC31935F9BE001549EB /* libPullToReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPullToReact.a; path = "../PullToReact/build/Debug-iphoneos/libPullToReact.a"; sourceTree = "<group>"; };
+		AA7398DF193CA4F100A264AE /* MNTRadioDialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTRadioDialViewController.h; sourceTree = "<group>"; };
+		AA7398E0193CA4F100A264AE /* MNTRadioDialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTRadioDialViewController.m; sourceTree = "<group>"; };
+		AA7398E3193CA5A900A264AE /* RadioDialPullToReactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDialPullToReactView.h; sourceTree = "<group>"; };
+		AA7398E4193CA5A900A264AE /* RadioDialPullToReactView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDialPullToReactView.m; sourceTree = "<group>"; };
+		AA7398E6193CAD0200A264AE /* RadioDialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDialView.h; sourceTree = "<group>"; };
+		AA7398E7193CAD0200A264AE /* RadioDialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDialView.m; sourceTree = "<group>"; };
+		AA7398EA193D2AFF00A264AE /* radiodialbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radiodialbg@2x.png"; sourceTree = "<group>"; };
+		AAA69525193D318500D59A02 /* radiodialbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiodialbg.png; sourceTree = "<group>"; };
 		AAE55E611936149A00E09DCF /* pulldown-archive-hled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pulldown-archive-hled.png"; sourceTree = "<group>"; };
 		AAE55E621936149A00E09DCF /* pulldown-archive-hled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pulldown-archive-hled@2x.png"; sourceTree = "<group>"; };
 		AAE55E631936149A00E09DCF /* pulldown-archive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pulldown-archive.png"; sourceTree = "<group>"; };
@@ -164,13 +177,10 @@
 				AA331E9E1935E50C001549EB /* MNTAppDelegate.m */,
 				AA331EBD1935E876001549EB /* MNTRootTableViewController.h */,
 				AA331EBE1935E876001549EB /* MNTRootTableViewController.m */,
-				AA331EC01935F975001549EB /* MentionViewController.h */,
-				AA331EC11935F975001549EB /* MentionViewController.m */,
-				AAE55E761936149A00E09DCF /* MentionPullToReactView.h */,
-				AAE55E751936149A00E09DCF /* MentionPullToReactView.m */,
-				AAE55E601936149A00E09DCF /* MentionPullToReactView */,
+				AA7398DE193CA4B900A264AE /* Mention pull to react */,
 				AA331EA01935E50C001549EB /* Images.xcassets */,
 				AA331E951935E50C001549EB /* Supporting Files */,
+				AA7398E2193CA4FF00A264AE /* Radio dial */,
 			);
 			path = ExampleCustomContent;
 			sourceTree = "<group>";
@@ -202,6 +212,41 @@
 				AA331EB01935E50C001549EB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA7398DE193CA4B900A264AE /* Mention pull to react */ = {
+			isa = PBXGroup;
+			children = (
+				AA331EC01935F975001549EB /* MentionViewController.h */,
+				AA331EC11935F975001549EB /* MentionViewController.m */,
+				AAE55E761936149A00E09DCF /* MentionPullToReactView.h */,
+				AAE55E751936149A00E09DCF /* MentionPullToReactView.m */,
+				AAE55E601936149A00E09DCF /* MentionPullToReactView */,
+			);
+			name = "Mention pull to react";
+			sourceTree = "<group>";
+		};
+		AA7398E2193CA4FF00A264AE /* Radio dial */ = {
+			isa = PBXGroup;
+			children = (
+				AA7398DF193CA4F100A264AE /* MNTRadioDialViewController.h */,
+				AA7398E0193CA4F100A264AE /* MNTRadioDialViewController.m */,
+				AA7398E6193CAD0200A264AE /* RadioDialView.h */,
+				AA7398E7193CAD0200A264AE /* RadioDialView.m */,
+				AA7398E3193CA5A900A264AE /* RadioDialPullToReactView.h */,
+				AA7398E4193CA5A900A264AE /* RadioDialPullToReactView.m */,
+				AA7398E9193D2AFF00A264AE /* RadioDialPullToReactView */,
+			);
+			name = "Radio dial";
+			sourceTree = "<group>";
+		};
+		AA7398E9193D2AFF00A264AE /* RadioDialPullToReactView */ = {
+			isa = PBXGroup;
+			children = (
+				AAA69525193D318500D59A02 /* radiodialbg.png */,
+				AA7398EA193D2AFF00A264AE /* radiodialbg@2x.png */,
+			);
+			path = RadioDialPullToReactView;
 			sourceTree = "<group>";
 		};
 		AAE55E601936149A00E09DCF /* MentionPullToReactView */ = {
@@ -323,9 +368,11 @@
 				AAE55E831936149A00E09DCF /* pulldown-irrelevant-hled.png in Resources */,
 				AAE55E8A1936149A00E09DCF /* pulldown-trash@2x.png in Resources */,
 				AA331EA11935E50C001549EB /* Images.xcassets in Resources */,
+				AA7398EB193D2AFF00A264AE /* radiodialbg@2x.png in Resources */,
 				AAE55E7E1936149A00E09DCF /* pulldown-ban@2x.png in Resources */,
 				AAE55E7B1936149A00E09DCF /* pulldown-ban-hled.png in Resources */,
 				AAE55E7A1936149A00E09DCF /* pulldown-archive@2x.png in Resources */,
+				AAA69526193D318500D59A02 /* radiodialbg.png in Resources */,
 				AAE55E781936149A00E09DCF /* pulldown-archive-hled@2x.png in Resources */,
 				AAE55E7D1936149A00E09DCF /* pulldown-ban.png in Resources */,
 				AAE55E861936149A00E09DCF /* pulldown-irrelevant@2x.png in Resources */,
@@ -348,9 +395,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA331E9F1935E50C001549EB /* MNTAppDelegate.m in Sources */,
+				AA7398E5193CA5A900A264AE /* RadioDialPullToReactView.m in Sources */,
 				AA331EC21935F975001549EB /* MentionViewController.m in Sources */,
 				AAE55E8B1936149A00E09DCF /* MentionPullToReactView.m in Sources */,
 				AA331EBF1935E876001549EB /* MNTRootTableViewController.m in Sources */,
+				AA7398E1193CA4F100A264AE /* MNTRadioDialViewController.m in Sources */,
+				AA7398E8193CAD0200A264AE /* RadioDialView.m in Sources */,
 				AA331E9B1935E50C001549EB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
