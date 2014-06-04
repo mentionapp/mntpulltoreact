@@ -10,6 +10,7 @@
 
 #import "MentionViewController.h"
 #import "MNTRadioDialViewController.h"
+#import "RefreshViewController.h"
 
 @interface MNTRootTableViewController ()
 @property(nonatomic) NSArray *data;
@@ -22,7 +23,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        _data = @[@"Mention pull to react", @"Radio dial"];
+        _data = @[@"Mention pull to react", @"Radio dial", @"UIRefreshControl clone"];
     }
     return self;
 }
@@ -55,6 +56,10 @@
     if (1 == [indexPath row]) {
         MNTRadioDialViewController *radioDialViewController = [[MNTRadioDialViewController alloc] init];
         [self.navigationController pushViewController:radioDialViewController animated:YES];
+    }
+    if (2 == [indexPath row]) {
+        RefreshViewController *refreshViewController = [[RefreshViewController alloc] init];
+        [self.navigationController pushViewController:refreshViewController animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

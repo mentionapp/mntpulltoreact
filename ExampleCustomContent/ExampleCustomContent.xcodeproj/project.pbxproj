@@ -22,6 +22,9 @@
 		AA331EBF1935E876001549EB /* MNTRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA331EBE1935E876001549EB /* MNTRootTableViewController.m */; };
 		AA331EC21935F975001549EB /* MentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA331EC11935F975001549EB /* MentionViewController.m */; };
 		AA331EC41935F9BE001549EB /* libPullToReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA331EC31935F9BE001549EB /* libPullToReact.a */; };
+		AA5E6ECB193F136200B8FAE9 /* RefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5E6ECA193F136200B8FAE9 /* RefreshViewController.m */; };
+		AA5E6ED2193F152800B8FAE9 /* CKRefreshArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5E6ED1193F152800B8FAE9 /* CKRefreshArrowView.m */; };
+		AA5E6ED5193F18A400B8FAE9 /* RefreshPullToReactView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5E6ED4193F18A400B8FAE9 /* RefreshPullToReactView.m */; };
 		AA7398E1193CA4F100A264AE /* MNTRadioDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7398E0193CA4F100A264AE /* MNTRadioDialViewController.m */; };
 		AA7398E5193CA5A900A264AE /* RadioDialPullToReactView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7398E4193CA5A900A264AE /* RadioDialPullToReactView.m */; };
 		AA7398E8193CAD0200A264AE /* RadioDialView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7398E7193CAD0200A264AE /* RadioDialView.m */; };
@@ -82,6 +85,12 @@
 		AA331EC01935F975001549EB /* MentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MentionViewController.h; sourceTree = "<group>"; };
 		AA331EC11935F975001549EB /* MentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MentionViewController.m; sourceTree = "<group>"; };
 		AA331EC31935F9BE001549EB /* libPullToReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPullToReact.a; path = "../PullToReact/build/Debug-iphoneos/libPullToReact.a"; sourceTree = "<group>"; };
+		AA5E6EC9193F136200B8FAE9 /* RefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewController.h; sourceTree = "<group>"; };
+		AA5E6ECA193F136200B8FAE9 /* RefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshViewController.m; sourceTree = "<group>"; };
+		AA5E6ED0193F152800B8FAE9 /* CKRefreshArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRefreshArrowView.h; sourceTree = "<group>"; };
+		AA5E6ED1193F152800B8FAE9 /* CKRefreshArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRefreshArrowView.m; sourceTree = "<group>"; };
+		AA5E6ED3193F18A400B8FAE9 /* RefreshPullToReactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshPullToReactView.h; sourceTree = "<group>"; };
+		AA5E6ED4193F18A400B8FAE9 /* RefreshPullToReactView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshPullToReactView.m; sourceTree = "<group>"; };
 		AA7398DF193CA4F100A264AE /* MNTRadioDialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTRadioDialViewController.h; sourceTree = "<group>"; };
 		AA7398E0193CA4F100A264AE /* MNTRadioDialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTRadioDialViewController.m; sourceTree = "<group>"; };
 		AA7398E3193CA5A900A264AE /* RadioDialPullToReactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDialPullToReactView.h; sourceTree = "<group>"; };
@@ -178,9 +187,10 @@
 				AA331EBD1935E876001549EB /* MNTRootTableViewController.h */,
 				AA331EBE1935E876001549EB /* MNTRootTableViewController.m */,
 				AA7398DE193CA4B900A264AE /* Mention pull to react */,
+				AA7398E2193CA4FF00A264AE /* Radio dial */,
+				AA5E6ECF193F14E400B8FAE9 /* Pull to refresh example */,
 				AA331EA01935E50C001549EB /* Images.xcassets */,
 				AA331E951935E50C001549EB /* Supporting Files */,
-				AA7398E2193CA4FF00A264AE /* Radio dial */,
 			);
 			path = ExampleCustomContent;
 			sourceTree = "<group>";
@@ -212,6 +222,19 @@
 				AA331EB01935E50C001549EB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA5E6ECF193F14E400B8FAE9 /* Pull to refresh example */ = {
+			isa = PBXGroup;
+			children = (
+				AA5E6EC9193F136200B8FAE9 /* RefreshViewController.h */,
+				AA5E6ECA193F136200B8FAE9 /* RefreshViewController.m */,
+				AA5E6ED3193F18A400B8FAE9 /* RefreshPullToReactView.h */,
+				AA5E6ED4193F18A400B8FAE9 /* RefreshPullToReactView.m */,
+				AA5E6ED0193F152800B8FAE9 /* CKRefreshArrowView.h */,
+				AA5E6ED1193F152800B8FAE9 /* CKRefreshArrowView.m */,
+			);
+			name = "Pull to refresh example";
 			sourceTree = "<group>";
 		};
 		AA7398DE193CA4B900A264AE /* Mention pull to react */ = {
@@ -396,10 +419,13 @@
 			files = (
 				AA331E9F1935E50C001549EB /* MNTAppDelegate.m in Sources */,
 				AA7398E5193CA5A900A264AE /* RadioDialPullToReactView.m in Sources */,
+				AA5E6ED2193F152800B8FAE9 /* CKRefreshArrowView.m in Sources */,
+				AA5E6ECB193F136200B8FAE9 /* RefreshViewController.m in Sources */,
 				AA331EC21935F975001549EB /* MentionViewController.m in Sources */,
 				AAE55E8B1936149A00E09DCF /* MentionPullToReactView.m in Sources */,
 				AA331EBF1935E876001549EB /* MNTRootTableViewController.m in Sources */,
 				AA7398E1193CA4F100A264AE /* MNTRadioDialViewController.m in Sources */,
+				AA5E6ED5193F18A400B8FAE9 /* RefreshPullToReactView.m in Sources */,
 				AA7398E8193CAD0200A264AE /* RadioDialView.m in Sources */,
 				AA331E9B1935E50C001549EB /* main.m in Sources */,
 			);
