@@ -20,30 +20,19 @@ It is a subclass of an `UIControl` and embrace the common [target-action](https:
 The shortest code sample use the MNTPullToReactDefaultView. For instance the code below create a pull to react with 4 actions.
 
 ``` objective-c
-#import "PullToReact/PullToReact.h"
+// Import the library header
+#import "PullToReact.h"
 
-- (void)viewDidLoad
-{
-   [super viewDidLoad];
-   self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-   self.tableView.delegate = self;
-   self.tableView.dataSource = self;
-   MNTPullToReactControl *reactControl = [[MNTPullToReactControl alloc] initWithNumberOfActions:4];
-   [reactControl addTarget:self action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
-   self.tableView.reactControl = reactControl;
-}
+// In the viewDidLoad create the control
+MNTPullToReactControl *reactControl = [[MNTPullToReactControl alloc] initWithNumberOfActions:4];
+[reactControl addTarget:self action:@selector(reaction:) forControlEvents:UIControlEventValueChanged];
+self.tableView.reactControl = reactControl;
 
-#pragma mark - Pull to react target-action method
+// Than create the target-action method
 - (void)reaction:(id)sender
 {
-   MNTPullToReactControl *reactControl = (MNTPullToReactControl *)sender;
-   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-      NSLog(@"Doing action %ld", (long)reactControl.action);
-      usleep(1100 * 1000);
-         dispatch_async(dispatch_get_main_queue(), ^{
-            [reactControl endAction:reactControl.action];
-         });
-   });
+    // Do the reaction thing
+    [reactControl endAction:reactControl.action];
 }
 ```
 
