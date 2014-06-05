@@ -106,4 +106,5 @@ To see how to make amazing Pull to React designs, you can go through the [exampl
 If you're using MNTPullToReact in your application, add your App Store link to the list here.
 
 ## Contributors
+- [Julie Chabin](https://github.com/syswarren)
 - [Alex Manthei](https://github.com/amanthei)
