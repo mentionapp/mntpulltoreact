@@ -5,6 +5,14 @@ MNTPullToReact is an extended evolution of the famous pull to refresh interactio
 You can bind as many reactions as you'd like to MNTPullToReact and have your user access specific application actions through this unique and well known gesture.
 
 MNTPullToReact is very easy to use and highly customizable.
+- [Easy to use](#easy-to-use)
+- [Highly customizable](#highly-customizable)
+
+## Demo
+
+<p align="center" >
+  <img src="https://raw.githubusercontent.com/mentionapp/mntpulltoreact/master/README/mention-example.gif" alt="Pull to React demo" title="Pull to React demo">
+</p>
 
 ## Easy to use
 MNTPullToReact is a subclass of `UIControl` and embraces the common [target-action](https://developer.apple.com/library/ios/documentation/general/conceptual/Devpedia-CocoaApp/TargetAction.html) design pattern widely used in Apple's own controls. It also mimics the Apple `UIRefreshControl` control interface to facilitate its usage by developers already familiar with the Apple pull to refresh control.
@@ -17,7 +25,7 @@ MNTPullToReact is a subclass of `UIControl` and embraces the common [target-acti
 | Event on action needed      | `UIControlEventValueChanged ` | `UIControlEventValueChanged ` |
 
 ### Short code sample
-Here is a short code sample that uses the MNTPullToReactDefaultView. The following code creates a pull to react with 4 actions.
+Here is a short code sample that uses the MNTPullToReactDefaultView under the hood. The following code creates a pull to react with 4 actions.
 
 ``` objective-c
 // Import the library header
@@ -38,4 +46,7 @@ self.tableView.reactControl = reactControl;
 
 ## Highly customizable
 You can customize your own pull to react features without any limits by subclassing the MNTPullToReactView class.
+<p align="center" >
+  <img src="https://raw.githubusercontent.com/mentionapp/mntpulltoreact/master/README/examples.jpg" alt="Pull to React examples" title="Pull to React examples">
+</p>
 
