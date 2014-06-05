@@ -67,7 +67,7 @@ OTHER_LDFLAGS -ObjC
 #import "PullToReact.h"
 ```
 
-+ Set the new `reactControl` of the `UITableView` class to the Pull to React you want to use.
++ Set the new `reactControl` property of the `UITableView` class to the Pull to React you want to use.
 ``` objective-c
 MNTPullToReactControl *reactControl = [[MNTPullToReactControl alloc] initWithNumberOfActions:4];
 reactControl.backgroundColor = [UIColor redColor];
