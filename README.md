@@ -99,7 +99,7 @@ You can customize your own Pull to React features without any limits by subclass
 To see how to make amazing Pull to React designs, you can go through the [examples](https://github.com/mentionapp/mntpulltoreact/tree/master/ExampleCustomContent) provided in the library.
 ## To-do
 - Improve and finish the documentation to get it added to http://cocoadocs.org/.
-- Extended the library to be able to have a pull to react control above a `UIWebView`.
+- Extended the library to be able to have a Pull to React control above a `UIWebView`.
 - Add the ability to put Pull to React controls on other sides of the targeted view (on the left, on the right, and at the bottom).
 
 ## Applications
