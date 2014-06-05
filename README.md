@@ -13,6 +13,8 @@ If you're using MNTPullToReact in your application, add your application link to
 
 Finally, before the demo, I'd like to thank all of the contributors. If I forget, please add yourself to the [contributors list](#contributors). There will always be something to do or improve, and as such, you can read the [to-do list](#todo) if you're looking for a specific way to contribute.
 
+-- Guillaume Sempe, Lead Mobile Developer, mention
+
 ## Demo
 
 <p align="center" >
