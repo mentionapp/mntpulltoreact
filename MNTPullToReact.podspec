@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MNTPullToReact"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "One gesture, many actions. An evolution of Pull to Refresh."
   s.homepage     = "https://github.com/mentionapp/mntpulltoreact"
   s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
