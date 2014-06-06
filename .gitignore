@@ -8,7 +8,7 @@
 .Trashes
 
 # Xcode
-build/*
+build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -17,8 +17,8 @@ build/*
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-*.xcworkspace
-!default.xcworkspace
 xcuserdata
-profile
+*.xccheckout
 *.moved-aside
+DerivedData
+*.xcuserstate
