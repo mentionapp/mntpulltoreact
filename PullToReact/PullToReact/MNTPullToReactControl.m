@@ -237,7 +237,6 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
      */
     CGFloat y = MNTPullToReactControlComputePullHeight(location);
     CGPoint updatedLocation = {location.x, y};
-    NSLog(@"point is %@", NSStringFromCGPoint(updatedLocation));
 }
 
 - (void)handletouchMoveToLocation:(CGPoint)location
@@ -249,12 +248,11 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 
 - (void)handletouchAbortedAtLocation:(CGPoint)location
 {
-    NSLog(@"%s", __func__);
+    // Nothing here right now
 }
 
 - (void)handletouchEndedAtLocation:(CGPoint)location
 {
-    NSLog(@"%s", __func__);
     CGFloat y = MNTPullToReactControlComputePullHeight(location);
     CGPoint updatedLocation = {location.x, y};
     [self doWithLocation:updatedLocation];

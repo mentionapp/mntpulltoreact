@@ -18,13 +18,11 @@
 
 - (void)reset {
     [super reset];
-    NSLog(@"%s",__func__);
     self.lastPoint = CGPointZero;
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     [super touchesBegan:touches withEvent:event];
-    NSLog(@"%s",__func__);
     if ([touches count] != 1) {
         self.state = UIGestureRecognizerStateFailed;
         return;
@@ -41,12 +39,10 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     self.state = UIGestureRecognizerStateEnded;
-    NSLog(@"%s",__func__);
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];
     self.state = UIGestureRecognizerStateCancelled;
-    NSLog(@"%s",__func__);
 }
 
 @end

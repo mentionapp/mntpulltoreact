@@ -59,14 +59,8 @@ static NSString *MNTPullToReactDefaultViewMsgHasDoneAction = @"Action %d done";
     [self addSubview:_actionLabel];
 }
 
-- (void)willTriggerAction:(NSInteger)action
-{
-    NSLog(@"%s", __func__);
-}
-
 - (void)didTriggerAction:(NSInteger)action
 {
-    NSLog(@"%s", __func__);
     if (0 == action) {
         self.actionLabel.text = MNTPullToReactDefaultViewMsgNoAction;
     } else {
@@ -76,13 +70,11 @@ static NSString *MNTPullToReactDefaultViewMsgHasDoneAction = @"Action %d done";
 
 - (void)willDoAction:(NSInteger)action
 {
-    NSLog(@"%s", __func__);
     self.actionLabel.text = [NSString stringWithFormat:MNTPullToReactDefaultViewMsgDoingAction, action];
 }
 
 - (void)didDoAction:(NSInteger)action
 {
-    NSLog(@"%s", __func__);
     self.actionLabel.text = [NSString stringWithFormat:MNTPullToReactDefaultViewMsgHasDoneAction, action];
 }
 /*
