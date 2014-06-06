@@ -236,7 +236,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
      Override y position to activate pull only when scrollview is at the top
      */
     CGFloat y = MNTPullToReactControlComputePullHeight(location);
-    CGPoint updatedLocation = {location.x, y};
+    __unused CGPoint updatedLocation = {location.x, y};
 }
 
 - (void)handletouchMoveToLocation:(CGPoint)location
