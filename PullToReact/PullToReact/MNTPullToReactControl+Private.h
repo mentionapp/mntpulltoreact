@@ -12,4 +12,7 @@
 
 - (void)reactFromScrollView:(UIScrollView *)scrollView;
 - (void)removeFromScrollView;
+
+- (void)reactFromWebView:(UIWebView *)webView;
+- (void)removeFromWebView;
 @end

@@ -45,6 +45,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 @property(nonatomic, assign, readwrite) NSInteger numberOfActions;
 @property(nonatomic, assign, readwrite) UIScrollView *scrollView;
 
+@property(nonatomic, assign) UIWebView *webView; // Used for react controls attached to web views
 @property(nonatomic, assign, getter = isExpanded) BOOL expanded;
 @property(nonatomic) MNTFakeGestureRecognizer *fakeGestureRecognizer; // Use to track user touch on the scrollview
 
@@ -206,23 +207,29 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 
 #pragma mark Gesture handling
 - (void)handleFakeGesture:(MNTFakeGestureRecognizer *)gesture {
+    CGPoint location;
+    if (nil != self.webView) {
+        location = [gesture locationInView:self.webView];
+    } else {
+        location = [gesture locationInView:self.scrollView];
+    }
     switch (gesture.state) {
         case UIGestureRecognizerStatePossible:
             break;
         case UIGestureRecognizerStateBegan:
-            [self handletouchBeganAtLocation:[gesture locationInView:self.scrollView]];
+            [self handletouchBeganAtLocation:location];
             break;
         case UIGestureRecognizerStateChanged:
-            [self handletouchMoveToLocation:[gesture locationInView:self.scrollView]];
+            [self handletouchMoveToLocation:location];
             break;
         case UIGestureRecognizerStateCancelled:
-            [self handletouchAbortedAtLocation:[gesture locationInView:self.scrollView]];
+            [self handletouchAbortedAtLocation:location];
             break;
         case UIGestureRecognizerStateFailed:
-            [self handletouchAbortedAtLocation:[gesture locationInView:self.scrollView]];
+            [self handletouchAbortedAtLocation:location];
             break;
         case UIGestureRecognizerStateEnded:
-            [self handletouchEndedAtLocation:[gesture locationInView:self.scrollView]];
+            [self handletouchEndedAtLocation:location];
             break;
         default:
             break;
@@ -260,6 +267,7 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 
 - (void)updateWithLocation:(CGPoint)location
 {
+    DLog(@"Pull to react Location is : %@", NSStringFromCGPoint(location));
     self.location = location;
     if (location.y < self.threshold) {
         pthread_mutex_lock(&_actionMutex);
@@ -289,6 +297,12 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     }
     if (0 < location.y) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.contentView.frame = ({
+                CGRect frame = self.contentView.frame;
+                frame.origin.x = self.scrollView.contentOffset.x;
+                frame.size.width = self.scrollView.frame.size.width;
+                frame;
+            });
             [self contentViewDidMoveTo];
         });
     }
@@ -332,6 +346,18 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     self.fakeGestureRecognizer.delegate = nil;
     self.scrollViewContentInset = UIEdgeInsetsZero;
     self.scrollView = nil;
+}
+
+- (void)reactFromWebView:(UIWebView *)webView
+{
+    self.webView = webView;
+    [self reactFromScrollView:self.webView.scrollView];
+}
+
+- (void)removeFromWebView
+{
+    [self removeFromScrollView];
+    self.webView = nil;
 }
 
 @end
