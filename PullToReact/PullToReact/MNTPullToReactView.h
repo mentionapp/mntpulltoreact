@@ -22,8 +22,10 @@
 
 /**
  Notifies the pull to react view that its targeted scrollview is about to do an action.
+ 
+ @return true to emit UIControlEventValueChanged event, false to not emit it
  */
-- (void)willDoAction:(NSInteger)action;
+- (BOOL)willDoAction:(NSInteger)action;
 
 /**
  The targetted scrollview has done an action

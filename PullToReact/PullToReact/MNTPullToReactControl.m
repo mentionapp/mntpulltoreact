@@ -85,20 +85,8 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 #pragma mark life cycle methods
 - (void)beginAction:(NSInteger)action
 {
-    if (self.triggeredAction != action) {
-        self.triggeredAction = action;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self contentViewWillTriggerAction];
-            [self contentViewDidTriggerAction];
-        });
-    }
-    self.scrollViewContentInset = self.scrollView.contentInset;
-    self.action = action;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.3 animations:^{
-            self.expanded = YES;
-        }];
-        [self contentViewWillDoAction];
+        [self privateBeginAction:action];
     });
 }
 
@@ -164,6 +152,21 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 	}
 }
 
+- (BOOL)privateBeginAction:(NSInteger)action
+{
+    if (self.triggeredAction != action) {
+        self.triggeredAction = action;
+        [self contentViewWillTriggerAction];
+        [self contentViewDidTriggerAction];
+    }
+    self.scrollViewContentInset = self.scrollView.contentInset;
+    self.action = action;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.expanded = YES;
+    }];
+    return [self contentViewWillDoAction];
+}
+
 #pragma mark Content view actions
 - (void)contentViewWillTriggerAction
 {
@@ -179,11 +182,12 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
     }
 }
 
-- (void)contentViewWillDoAction
+- (BOOL)contentViewWillDoAction
 {
     if (contentViewFlags.contentViewWillDoAction) {
-        [self.contentView willDoAction:self.action];
+        return [self.contentView willDoAction:self.action];
     }
+    return true;
 }
 
 - (void)contentViewDidDoAction
@@ -311,9 +315,13 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 - (void)doWithLocation:(CGPoint)location
 {
     if (location.y >= self.threshold) {
-        [self beginAction:self.triggeredAction];
+        BOOL shouldSendActions = [self privateBeginAction:self.triggeredAction];
         self.triggeredAction = 0;
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
+        if (shouldSendActions) {
+            [self sendActionsForControlEvents:UIControlEventValueChanged];
+        } else {
+            [self endAction:self.action];
+        }
     }
 }
 
