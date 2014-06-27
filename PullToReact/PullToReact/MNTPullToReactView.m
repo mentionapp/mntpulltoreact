@@ -29,7 +29,7 @@
     // Default implementation is empty
 }
 
-- (void)willDoAction:(NSInteger)action
+- (BOOL)willDoAction:(NSInteger)action
 {
     // Default implementation is empty
 }
