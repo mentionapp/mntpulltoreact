@@ -32,6 +32,7 @@
 - (BOOL)willDoAction:(NSInteger)action
 {
     // Default implementation is empty
+    return YES;
 }
 
 - (void)didDoAction:(NSInteger)action
