@@ -271,7 +271,6 @@ CGFloat currentY = self.scrollView.contentOffset.y; \
 
 - (void)updateWithLocation:(CGPoint)location
 {
-    DLog(@"Pull to react Location is : %@", NSStringFromCGPoint(location));
     self.location = location;
     if (location.y < self.threshold) {
         pthread_mutex_lock(&_actionMutex);
