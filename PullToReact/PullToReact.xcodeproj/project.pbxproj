@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0546175B1AE61FF1009B1E37 /* UIWebView+MNTPullToReact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0546175A1AE61FF1009B1E37 /* UIWebView+MNTPullToReact.m */; };
+		0546175C1AE62006009B1E37 /* UIWebView+MNTPullToReact.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 054617591AE61FF1009B1E37 /* UIWebView+MNTPullToReact.h */; };
 		AA331EC81935FCB5001549EB /* MNTPullToReactView.h in Copy Files */ = {isa = PBXBuildFile; fileRef = AA769F1319347DAC00E73640 /* MNTPullToReactView.h */; };
 		AA57C1A4192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA57C19B192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m */; };
 		AA724E31192D1AB300DB80E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA724E30192D1AB300DB80E9 /* Foundation.framework */; };
@@ -43,6 +45,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				0546175C1AE62006009B1E37 /* UIWebView+MNTPullToReact.h in Copy Files */,
 				AA724E36192D1AB300DB80E9 /* PullToReact.h in Copy Files */,
 				AA769F0A19335C7D00E73640 /* MNTPullToReactControl.h in Copy Files */,
 				AA331EC81935FCB5001549EB /* MNTPullToReactView.h in Copy Files */,
@@ -54,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		054617591AE61FF1009B1E37 /* UIWebView+MNTPullToReact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+MNTPullToReact.h"; sourceTree = "<group>"; };
+		0546175A1AE61FF1009B1E37 /* UIWebView+MNTPullToReact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+MNTPullToReact.m"; sourceTree = "<group>"; };
 		AA57C19A192DEE5E00D6B04B /* MNTFakeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTFakeGestureRecognizer.h; sourceTree = "<group>"; };
 		AA57C19B192DEE5E00D6B04B /* MNTFakeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTFakeGestureRecognizer.m; sourceTree = "<group>"; };
 		AA724E2D192D1AB300DB80E9 /* libPullToReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPullToReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,9 +151,11 @@
 				AA769F1319347DAC00E73640 /* MNTPullToReactView.h */,
 				AA769F1419347DAC00E73640 /* MNTPullToReactView.m */,
 				AA724E35192D1AB300DB80E9 /* PullToReact.h */,
-				AA724E33192D1AB300DB80E9 /* Supporting Files */,
 				AA769F0419332ED100E73640 /* UITableView+MNTPullToReact.h */,
 				AA769F0519332ED100E73640 /* UITableView+MNTPullToReact.m */,
+				054617591AE61FF1009B1E37 /* UIWebView+MNTPullToReact.h */,
+				0546175A1AE61FF1009B1E37 /* UIWebView+MNTPullToReact.m */,
+				AA724E33192D1AB300DB80E9 /* Supporting Files */,
 			);
 			path = PullToReact;
 			sourceTree = "<group>";
@@ -264,6 +271,7 @@
 				AA769F0619332ED100E73640 /* UITableView+MNTPullToReact.m in Sources */,
 				AA769F18193484AE00E73640 /* MNTPullToReactDefaultView.m in Sources */,
 				AA7398A0193C7FA300A264AE /* MNTPullToReactControl+Utils.m in Sources */,
+				0546175B1AE61FF1009B1E37 /* UIWebView+MNTPullToReact.m in Sources */,
 				AA769F1519347DAC00E73640 /* MNTPullToReactView.m in Sources */,
 				AA769F0919332F2600E73640 /* MNTPullToReactControl.m in Sources */,
 			);
